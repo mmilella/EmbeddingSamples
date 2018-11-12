@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html dir="ltr">
+    <head>
+        <title>Simple Embeded DV Project Demo</title>
+        <!--
+        Before this will work in DV goto Console -> Safe Domains->"Embedding In"-> add the http://host:port where this file is hosted.
+
+        If you get a CORS error in the JavaScript console of your browser there is likely an issue with the safe domain setting.
+        -->
+    </head>
+    <body>
+        <h1>Simple Embeded DV Project Demo- Fun</h1>
+
+        <div style="position: absolute; width: calc(100% - 40px); height: calc(100% - 120px)" >
+        
+            <!--
+            The following tag is the tag that will embed the specified project.
+
+            Veryfy the project-path is the same as the server you are hosting this project on.
+            -->    
+            <!--
+            <oracle-dv 
+               project-path="/users/admin/Embed Sample" 
+               active-page="canvas" 
+               active-tab-id="6" 
+               project-options='{"bDisableMobileLayout":false, "bShowFilterBar":true}'>
+            </oracle-dv>
+            -->
+            
+            <oracle-dv project-path="/users/admin/Embed Sample" active-page="canvas" active-tab-id="6">
+            </oracle-dv>
+        
+        </div>
+        
+        <!--
+        Single JS refrence for standalone embedding below this comment.
+        Be sure to test to make sure you have access to the host in the link.
+        -->
+        <script src="http://slc11aso.us.oracle.com:9704/dv/ui/api/v1/plugins/embedding/standalone/embedding.js" type="application/javascript">
+        </script>
+        
+        
+        <!--
+        Apply Knockout bindings after DV project is fully loaded.  This should be executed in a body onload handler or in a <script> tag after the <oracle-dv> tag.
+        -->   
+        <script>
+        requirejs(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojcomposite', 'jet-composites/oracle-dv/loader'], function(ko) {
+        ko.applyBindings();
+        });
+        </script>
+        
+
+    </body>
+</html>

@@ -1,0 +1,50 @@
+body{
+  /* use the following backgroud for normal mode */
+  /* background: rgb(255,255,255); */
+
+  /* use the following backgroud for dark mode */
+  background: #1d1d1d;
+
+  /* set the page font to some websafe font */
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.container {
+  display: inline-grid;
+  grid-template-columns: 300px auto auto;
+  grid-template-rows: 300px auto;
+  width:100%;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+
+.item {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.status-text{
+  color: rgb(0,122,255);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* UNSUPPORTED experimental CSS to for dark mode. UNSUPPORTED!!! */
+
+.bi_rootlayoutwrapper {
+    background-color: #1d1d1d !important;
+}
+
+text {
+  fill: white;
+  font-size: 9px;
+}
+
+path {
+  stroke: #1d1d1d;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+   <head>
+         <!-- <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick.css">
+         <link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick-theme.css">
+         -->
+         <link rel="stylesheet" href="../src/styles.css">
+         <script src="../bower_components/jquery/dist/jquery.js"></script>
+         <script src="../bower_components/angular/angular.js"></script>
+         <script src="../bower_components/slick-carousel/slick/slick.js"></script>
+         <script src="../bower_components/angular-slick-carousel/dist/angular-slick.min.js"></script>
+
+         <script src="../src/dataviz.js"></script>
+         <script src="http://slc11aso.us.oracle.com:9704/dv/ui/api/v1/plugins/embedding/standalone/embedding.js" type="application/javascript"></script>
+         <style>
+            html,body {
+               height:100%;
+            }
+         </style>
+   </head>
+   <body>
+      <div ng-app="Carousel">
+         <div ng-controller="CarouselController">
+            <h1>{{greeting}}</h1>
+            <!-- <slick slides-to-show="3" slides-to-scroll="1">
+               <div style="width:100px;height:100px">
+                     <oracle-dv project-path="/users/admin/Revenue" active-page="canvas" active-tab-id="1"></oracle-dv>
+               </div>
+               <div width="100px" height="100px">
+                     <oracle-dv project-path="/users/admin/Revenue" active-page="canvas" active-tab-id="2"></oracle-dv>
+               </div>
+               <div width="100px" height="100px">
+                     <oracle-dv project-path="/users/admin/Revenue" active-page="canvas" active-tab-id="3"></oracle-dv>
+               </div>
+               <div width="100px" height="100px">
+                     <oracle-dv project-path="/users/admin/Revenue" active-page="canvas" active-tab-id="4"></oracle-dv>
+               </div>
+            </slick> -->
+            <div id="oracle-dv-app">
+            <div ng-init="accordion=1">
+                  <h3 class="accordion" ng-class="{active:accordion==1}">
+                        <a href ng-click="accordion = 1">A Filter Example</a>
+                  </h3>
+                  <p class="accordion-content" ng-show="accordion==1">
+                        <select ng-model="selectedValue" ng-change="update()">
+                              <option ng-repeat="x in filtervalues">{{x}}</option>
+                        </select>
+                        <div id="oracle-dv1" style="width:600px;height:600px" ng-show="accordion==1">
+                              <oracle-dv project-path="{{projectPath}}" filters="{{filters}}" active-page="canvas" active-tab-id="1" project-options="{{projectOptions}}"></oracle-dv>
+                        </div>
+                  </p>
+
+                  <h3 class="accordion" ng-class="{active:accordion==2}">
+                        <a href ng-click="accordion = 2">A Viz Type Change Example</a>
+                  </h3>
+                  <p class="accordion-content" ng-show="accordion==2">
+                        <select ng-options="viz.name for viz in vizTypes" ng-model="selectedViz" ng-change="changeVizType()"></select>
+                        <div style="width:800px;height:400px;" ng-show="accordion==2">
+                              <oracle-dv id="oracle-dv" project-json="{{projectDemo}}" project-options="{{projectOptions}}"></oracle-dv>
+                        </div>
+                  </p>
+                              </div>
+            </div>
+            <!-- <div id="oracle-dv2" style="width:400px;height:400px;">
+                  <oracle-dv project-path="{{projectPath}}" filters="{{filters}}" active-page="canvas" active-tab-id="3"></oracle-dv>
+            </div> -->
+
+         </div>
+      </div>
+
+      <script>
+        requirejs(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojcomposite', 'jet-composites/oracle-dv/loader'], function(ko) {
+           ko.applyBindings({},document.getElementById("oracle-dv-app"));
+        });
+</script>
+   </body>
+</html>

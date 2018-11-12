@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html dir="ltr">
+    <head>
+        <title>DV War Room Demo</title>
+        <link href="css/styles.css" rel="stylesheet">
+        <!--
+        Before this will work in DV goto Console -> Safe Domains->"Embedding In"-> add the http://host:port where this file is hosted.
+
+        If you get a CORS error in the JavaScript console of your browser there is likely an issue with the safe domain setting.
+        -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/functions.js" type="application/javascript"></script>
+
+    </head>
+    <body>
+
+      <div class="container">
+        <div class="item">
+          <p class="status-text"></p>
+        </div>
+        <div class="item">
+          <oracle-dv id="report1"
+             project-path="/users/admin/Embed Sample - War Room 1"
+             active-page="canvas"
+             active-tab-id="4"
+             project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+          </oracle-dv>
+        </div>
+        <div class="item">
+          <oracle-dv id="report2"
+             project-path="/users/admin/Embed Sample - War Room 1"
+             active-page="canvas"
+             active-tab-id="1"
+             project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+          </oracle-dv>
+        </div>
+        <div class="item" style="grid-column-start: 1; grid-column-end: span 2;">
+          <oracle-dv id="report3"
+             project-path="/users/admin/Embed Sample - War Room 1"
+             active-page="canvas"
+             active-tab-id="3"
+             project-options='{"bDisableMobileLayout":false, "bShowFilterBar":false}'>
+          </oracle-dv>
+        </div>
+        <div class="item">
+          <oracle-dv id="report4"
+             project-path="/users/admin/Embed Sample - War Room 1"
+             active-page="canvas"
+             active-tab-id="6"
+             project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+          </oracle-dv>
+        </div>
+
+      </div>
+        <!--
+        Single JS refrence for standalone embedding below this comment.
+        Be sure to test to make sure you have access to the host in the link.
+        -->
+        <script src="http://slc04rrs.us.oracle.com:9704/dv/ui/api/v1/plugins/embedding/standalone/embedding.js" type="application/javascript">
+        </script>
+
+
+        <!--
+        Apply Knockout bindings after DV project is fully loaded.  This should be executed in a body onload handler or in a <script> tag after the <oracle-dv> tag.
+        -->
+        <script>
+        requirejs(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojcomposite', 'jet-composites/oracle-dv/loader'], function(ko) {
+        ko.applyBindings();
+        });
+
+
+
+        </script>
+
+    </body>
+</html>
