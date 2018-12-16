@@ -42,6 +42,7 @@ function refreshPage() {
   $("#report4").attr("project-path", "/users/admin/" + projectName);
   $("#report4").attr("active-tab-id", "6");
 
+
   //show the new projects
   $("#report1").show();
   $("#report2").show();

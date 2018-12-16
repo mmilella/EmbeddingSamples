@@ -1,17 +1,20 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html dir="ltr">
     <head>
-        <title>Simple Embeded DV Project Demo</title>
+        <title>DV Project Demo - With Login</title>
         <!--
         Before this will work in DV goto Console -> Safe Domains->"Embedding In"-> add the http://host:port where this file is hosted.
 
         If you get a CORS error in the JavaScript console of your browser there is likely an issue with the safe domain setting.
         -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="js/functions.js" type="application/javascript"></script>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>Simple Embeded DV Project Demo</h1>
+        <button id="loginbutton" class="button">Login</button>
 
-        <div style="position: absolute; width: calc(100% - 40px); height: calc(100% - 120px)" >
+        <div id="reports">
 
             <!--
             The following tag is the tag that will embed the specified project.
@@ -19,7 +22,7 @@
             Veryfy the project-path is the same as the server you are hosting this project on.
             -->
 
-            <oracle-dv
+            <oracle-dv id="report1"
                project-path="/users/admin/Embed Sample - Master Detail"
                active-page="canvas"
                active-tab-id="1"
