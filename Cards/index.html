@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-control" content="public">
+        <title>OA Card View</title>
+        <!--
+        Before this will work in DV goto Console -> Safe Domains->"Embedding In"-> add the http://host:port where this file is hosted.
+
+        If you get a CORS error in the JavaScript console of your browser there is likely an issue with the safe domain setting.
+        -->
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body class="pagebackground">
+      <div class="top-tools">
+        <div class="column right"><a id="refresh-page" href="#"><i class="material-icons small blue-grey-text">refresh</i></a></div>
+      </div>
+
+      <div class="fixed-action-btn" id="back-to-top">
+        <a class="btn-floating btn-large blue-grey">
+          <i class="large material-icons">arrow_upward</i>
+        </a>
+      </div>
+
+      <div class="container">
+        <div class="row">
+        <div class="col s12 m12 l6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title error">Daily Regional Sales<a class="full-screen" href="#"><i class="material-icons small right blue-grey-text">fullscreen</i></a></span>
+                <div class="report_container" >
+                  <oracle-dv
+                     project-path="/@Catalog/users/admin/OOW19"
+                     active-page="canvas"
+                     active-tab-id="1"
+                     project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                  </oracle-dv>
+                </div>
+            </div>
+            <div class="card-reveal">
+              <div class="report_container" >
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right close-narrative blue-grey-text">close</i></span>
+                <oracle-dv
+                   project-path="/@Catalog/users/admin/OOW19-Text"
+                   active-page="canvas"
+                   active-tab-id="1"
+                   project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                </oracle-dv>
+              </div>
+            </div>
+            <div class="card-action">
+              <a class="activator">Narrative</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Sales Trend<a class="full-screen" href="#"><i class="material-icons small right blue-grey-text">fullscreen</i></a></span>
+                <div class="report_container" >
+                  <oracle-dv
+                     project-path="/@Catalog/users/admin/OOW19"
+                     active-page="canvas"
+                     active-tab-id="3"
+                     project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                  </oracle-dv>
+                </div>
+            </div>
+            <div class="card-reveal">
+              <div class="report_container" >
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right close-narrative blue-grey-text">close</i></span>
+                <oracle-dv
+                   project-path="/@Catalog/users/admin/OOW19-Text"
+                   active-page="canvas"
+                   active-tab-id="3"
+                   project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                </oracle-dv>
+              </div>
+            </div>
+            <div class="card-action">
+              <a class="activator">Narrative</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+        <div class="col s12 m12 l6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Product Mix<a class="full-screen" href="#"><i class="material-icons small right blue-grey-text">fullscreen</i></a></span>
+                <div class="report_container" >
+                  <oracle-dv
+                     project-path="/@Catalog/users/admin/OOW19"
+                     active-page="canvas"
+                     active-tab-id="4"
+                     project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                  </oracle-dv>
+                </div>
+            </div>
+            <div class="card-reveal">
+              <div class="report_container" >
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right close-narrative blue-grey-text">close</i></span>
+                <oracle-dv
+                   project-path="/@Catalog/users/admin/OOW19-Text"
+                   active-page="canvas"
+                   active-tab-id="4"
+                   project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                </oracle-dv>
+              </div>
+            </div>
+            <div class="card-action">
+              <a class="activator">Narrative</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Product Mix by Region<a class="full-screen" href="#"><i class="material-icons small right blue-grey-text">fullscreen</i></a></span>
+                <div class="report_container"  >
+                  <oracle-dv
+                     project-path="/@Catalog/users/admin/OOW19"
+                     active-page="canvas"
+                     active-tab-id="6"
+                     project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                  </oracle-dv>
+                </div>
+            </div>
+            <div class="card-reveal">
+              <div class="report_container" >
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right close-narrative blue-grey-text">close</i></span>
+                <oracle-dv
+                   project-path="/@Catalog/users/admin/OOW19-Text"
+                   active-page="canvas"
+                   active-tab-id="6"
+                   project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                </oracle-dv>
+              </div>
+            </div>
+            <div class="card-action">
+              <a class="activator">Narrative</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+        <div class="col s12 m12 l6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Sales and Unit Map<a class="full-screen" href="#"><i class="material-icons small right blue-grey-text">fullscreen</i></a></span>
+                <div class="report_container"  >
+                  <oracle-dv
+                     project-path="/@Catalog/users/admin/OOW19"
+                     active-page="canvas"
+                     active-tab-id="7"
+                     project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                  </oracle-dv>
+                </div>
+            </div>
+            <div class="card-reveal">
+              <div class="report_container" >
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right close-narrative blue-grey-text">close</i></span>
+                <oracle-dv
+                   project-path="/@Catalog/users/admin/OOW19-Text"
+                   active-page="canvas"
+                   active-tab-id="7"
+                   project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                </oracle-dv>
+              </div>
+            </div>
+            <div class="card-action">
+              <a class="activator">Narrative</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m12 l6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Sales Outliers<a class="full-screen" href="#"><i class="material-icons small right blue-grey-text">fullscreen</i></a></span>
+                <div class="report_container">
+                  <oracle-dv
+                     project-path="/@Catalog/users/admin/OOW19"
+                     active-page="canvas"
+                     active-tab-id="8"
+                     project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                  </oracle-dv>
+                </div>
+            </div>
+            <div class="card-reveal">
+              <div class="report_container" >
+                <span class="card-title grey-text text-darken-4"><i class="material-icons right close-narrative blue-grey-text">close</i></span>
+                <oracle-dv
+                   project-path="/@Catalog/users/admin/OOW19-Text"
+                   active-page="canvas"
+                   active-tab-id="8"
+                   project-options='{"bDisableMobileLayout":true, "bShowFilterBar":false}'>
+                </oracle-dv>
+              </div>
+            </div>
+            <div class="card-action">
+              <a class="activator">Narrative</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!--
+      Single JS refrence for standalone embedding below this comment.
+      Be sure to test to make sure you have access to the host in the link.
+      -->
+      <script src="http://slc04rrs.us.oracle.com/static/dv/embedding/v1/standalone/embedding.js" type="application/javascript"></script>
+      <!--
+      Apply Knockout bindings after DV project is fully loaded.
+      This should be executed in a body onload handler or in a <script> tag after the <oracle-dv> tag.
+      -->
+      <script>
+      requirejs(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojcomposite', 'jet-composites/oracle-dv/loader'], function(ko) {
+      ko.applyBindings();
+      });
+      </script>
+
+      <script type="text/javascript" src="scripts/app.js"></script>
+    </body>
+</html>
